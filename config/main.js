@@ -1,11 +1,7 @@
-/** General Configurations Like PORT, HOST names and etc... */
-
-var config = {
+module.exports = {
   env: process.env.NODE_ENV || 'development',
   host: process.env.HOST || 'localhost',
   port: process.env.PORT || 8889,
-
-  // This part goes to React-Helmet for Head of our HTML
   app: {
     head: {
       title: 'barbar-vortigern',
@@ -19,5 +15,3 @@ var config = {
     }
   }
 };
-
-module.exports = config;

@@ -1,21 +1,18 @@
-var fs = require('fs');
-var path = require('path');
-var webpack = require('webpack');
-var postcssAssets = require('postcss-assets');
-var postcssNext = require('postcss-cssnext');
-var stylelint = require('stylelint');
-var ManifestPlugin = require('webpack-manifest-plugin');
-var CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+const fs = require('fs');
+const path = require('path');
+const webpack = require('webpack');
+const postcssAssets = require('postcss-assets');
+const postcssNext = require('postcss-cssnext');
+const stylelint = require('stylelint');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 
-var config = {
-  // Enable sourcemaps for debugging webpack's output.
+module.exports = {
   devtool: 'source-map',
-
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     modules: [path.resolve(__dirname), 'node_modules', 'app', 'app/redux'],
   },
-
   entry: {
     app: [
       'webpack-hot-middleware/client?reload=true',
@@ -23,26 +20,24 @@ var config = {
       './src/vendor/main.ts'
     ]
   },
-
   output: {
     path: path.resolve('./build/public'),
     publicPath: '/public/',
     filename: 'js/[name].js',
     pathinfo: true
   },
-
   module: {
     rules: [{
         enforce: 'pre',
-        test: /\.tsx?$/,
+        test: /\.ts(x)?$/,
         loader: 'tslint-loader'
       },
       {
-        test: /\.tsx?$/,
+        test: /\.ts(x)?$/,
         loader: 'react-hot-loader!awesome-typescript-loader'
       },
       {
-        test: /\.jsx$/,
+        test: /\.js(x)?$/,
         loader: 'babel-loader'
       },
       {
@@ -66,7 +61,6 @@ var config = {
           'css-loader'
         ]
       },
-
       {
         test: /\.eot(\?.*)?$/,
         loader: 'file-loader?name=fonts/[hash].[ext]'
@@ -89,7 +83,6 @@ var config = {
       }
     ]
   },
-
   plugins: [
     new CheckerPlugin(),
     new webpack.LoaderOptionsPlugin({
@@ -98,7 +91,7 @@ var config = {
         tslint: {
           failOnHint: true
         },
-        postcss: function () {
+        postcss: () => {
           return [
             stylelint({
               files: '../../src/app/*.css'
@@ -124,7 +117,6 @@ var config = {
     new webpack.NoEmitOnErrorsPlugin()
   ]
 };
-
 const copySync = (src, dest, overwrite) => {
   if (overwrite && fs.existsSync(dest)) {
     fs.unlinkSync(dest);
@@ -132,15 +124,11 @@ const copySync = (src, dest, overwrite) => {
   const data = fs.readFileSync(src);
   fs.writeFileSync(dest, data);
 }
-
 const createIfDoesntExist = dest => {
   if (!fs.existsSync(dest)) {
     fs.mkdirSync(dest);
   }
 }
-
 createIfDoesntExist('./build');
 createIfDoesntExist('./build/public');
 copySync('./src/favicon.ico', './build/public/favicon.ico', true);
-
-module.exports = config;

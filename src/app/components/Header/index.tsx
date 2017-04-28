@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 
-const style = require('./style.css');
+const style = require('./style.scss');
 
 export const Header = () => (
   <nav className={style.Nav}>
