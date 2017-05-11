@@ -1,4 +1,4 @@
-# Typescript-react-redux-ssr-boilerplate
+# Typescript-react-redux-ssr-boilerplate-sass
 
 [![TypeScript](https://barbaruploads.s3.amazonaws.com/bicoz/typescript.png)](https://www.typescriptlang.org/)
 [![React](https://barbaruploads.s3.amazonaws.com/bicoz/react.png)](https://github.com/facebook/react)
@@ -83,11 +83,11 @@
 │   │ │   └── store.ts          # Redux 스토어, 글로벌 앱 상태 포함.
 │   │ └── routes.tsx            # Routes 파일.
 │   ├── client.tsx              # 클라이언트 측 렌더링을위한 파일.
+│   ├── favicon.ico             # Favicon.
 │   └── server.tsx              # 서버 측 렌더링을위한 파일.
 ├── typings                     # typings 작성한 전역 유형 정의.
 ├── .gitignore                  # git 무시할 파일을 선언.
-├── .stylelintrc                # stylelint 설정파일.
-├── favicon.ico                 # Favicon.
+├── .gitAttribute               # git 파일에 적용시킬 속성을 기술
 ├── package.json                # Package 설정파일.
 ├── README.md                   # This file
 ├── tsconfig.json               # TypeScript 설정파일.
