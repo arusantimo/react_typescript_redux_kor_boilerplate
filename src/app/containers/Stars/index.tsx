@@ -1,30 +1,31 @@
 import * as React from 'react';
 import { getStars } from 'modules/stars';
 import { IStars, IStarsAction } from 'models/stars';
+
 const { connect } = require('react-redux');
 const { asyncConnect } = require('redux-connect');
-const style = require('./style.css');
+const style = require('./style.scss');
 
 interface IProps {
   stars: IStars;
   getStars: Redux.ActionCreator<IStarsAction>;
 }
 
+@connect(
+  (state) => ({ stars: state.stars }),  // mapStateToProps
+)
 @asyncConnect([{
   promise: ({ store: { dispatch } }) => {
-    return dispatch(getStars());
+    return dispatch(getStars());  // mapDispatchToProps
   },
 }])
-@connect(
-  (state) => ({ stars: state.stars }),
-)
-class Stars extends React.Component<IProps, {}> {
-  public render() {
-    const { stars } = this.props;
 
+class Stars extends React.Component<IProps, {}> {
+  public render(): JSX.Element {
     return (
       <div className={style.Stars}>
-        {stars.isFetching ? 'Fetching Stars' : stars.count}
+        react_typescript_redux_kor_boilerplate Repo의
+        Star갯수는 {this.props.stars.isFetching ? 'Fetching Stars' : this.props.stars.count}
       </div>
     );
   }

@@ -3,7 +3,6 @@ const path = require('path');
 const webpack = require('webpack');
 const postcssAssets = require('postcss-assets');
 const postcssNext = require('postcss-cssnext');
-const stylelint = require('stylelint');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
@@ -72,6 +71,27 @@ module.exports = {
         })
       },
       {
+        test: /\.scss$/,
+        include: path.resolve('./src/app'),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'sass-loader',
+          loader: [
+            'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]',
+            'postcss-loader'
+          ]
+        })
+      },
+      {
+        test: /\.scss$/,
+        exclude: path.resolve('./src/app'),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'sass-loader',
+          loader: [
+            'css-loader',
+          ]
+        })
+      },
+      {
         test: /\.eot(\?.*)?$/,
         loader: 'file-loader?name=fonts/[hash].[ext]'
       },
@@ -102,9 +122,6 @@ module.exports = {
         },
         postcss: () => {
           return [
-            stylelint({
-              files: '../../src/app/*.css'
-            }),
             postcssNext(),
             postcssAssets({
               relative: true

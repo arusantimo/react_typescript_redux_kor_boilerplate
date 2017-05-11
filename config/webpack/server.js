@@ -3,7 +3,6 @@ const fs = require('fs');
 const webpack = require('webpack');
 const postcssAssets = require('postcss-assets');
 const postcssNext = require('postcss-cssnext');
-const stylelint = require('stylelint');
 const nodeModules = {};
 fs.readdirSync('node_modules')
   .filter((x) => {
@@ -62,6 +61,14 @@ module.exports = {
         loaders: [
           'isomorphic-style-loader',
           'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]'
+        ]
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'isomorphic-style-loader',
+          'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]',
+          'sass-loader'
         ]
       }
     ]

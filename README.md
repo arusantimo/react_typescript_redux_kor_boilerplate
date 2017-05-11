@@ -1,6 +1,4 @@
 # Typescript-react-redux-ssr-boilerplate
-이 Repo는 vortigern기반으로 제작되어 있었습니다.<br>
-This Repo was based on vortigern.
 
 [![TypeScript](https://barbaruploads.s3.amazonaws.com/bicoz/typescript.png)](https://www.typescriptlang.org/)
 [![React](https://barbaruploads.s3.amazonaws.com/bicoz/react.png)](https://github.com/facebook/react)
@@ -25,7 +23,7 @@ This Repo was based on vortigern.
 - [classnames](https://github.com/JedWatson/classnames) classname의 사용 편의성을 높인다
 
 #### Build System
-- [Webpack](https://github.com/webpack/webpack) build를 위한 툴
+- [Webpack2](https://github.com/webpack/webpack) build를 위한 툴
   - [Awesome TypeScript Loader](https://github.com/s-panferov/awesome-typescript-loader) 타입스크립트 로더.
   - [Babel Loader](https://github.com/babel/babel-loader) 자바스크립트 바벨 로더.
   - [React Hot Loader](https://github.com/gaearon/react-hot-loader) 개발서버 핫 로딩을 위한 로더
@@ -122,5 +120,7 @@ $ npm test
 ```
 
 ## 추가할 기능
-- [] 테스트 (e2e, unit..)
-- [] 스타일 구조 최적화
+- 테스트 (e2e, unit..)
+- 스타일 구조 최적화
+
+이 Repo는 vortigern기반으로 제작되어 있었습니다. (This Repo was based on <a href="https://github.com/barbar/vortigern" target="_blank">vortigern</a>.)
