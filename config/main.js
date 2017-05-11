@@ -4,8 +4,8 @@ module.exports = {
   port: process.env.PORT || 8889,
   app: {
     head: {
-      title: 'barbar-vortigern',
-      titleTemplate: 'barbar-vortigern: %s',
+      title: 'arusantimo_ts_react_bt',
+      titleTemplate: 'arusantimo_ts_react_bt: %s',
       meta: [
         { charset: 'utf-8' },
         { 'http-equiv': 'x-ua-compatible', content: 'ie=edge' },
