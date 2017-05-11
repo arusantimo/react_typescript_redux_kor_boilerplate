@@ -1,15 +1,22 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 
-const style = require('./style.css');
+const style = require('./style.scss');
 
-export const Header = () => (
-  <nav className={style.Nav}>
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="about">About</Link></li>
-      <li><Link to="counter">Counter</Link></li>
-      <li><Link to="stars">Stars</Link></li>
-    </ul>
-  </nav>
-);
+interface IAppProps {
+  addStyle?: any;
+};
+
+export class Header extends React.Component<IAppProps, any> {
+  public render(): JSX.Element {
+    return (
+      <nav className={style.Nav}>
+        <ul>
+          <li><Link to="/">메인</Link></li>
+          <li><Link to="counter">서브1(리덕스 기본)</Link></li>
+          <li><Link to="stars">서브2(fetch 리덕스)</Link></li>
+        </ul>
+      </nav>
+    );
+  }
+}

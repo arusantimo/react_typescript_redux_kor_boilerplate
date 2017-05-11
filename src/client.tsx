@@ -30,3 +30,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app'),
 );
+
+const appDiv = document.getElementById('app');
+appDiv.style.visibility = 'visible';

@@ -1,20 +1,18 @@
-var path = require('path');
-var fs = require('fs');
-var webpack = require('webpack');
-var postcssAssets = require('postcss-assets');
-var postcssNext = require('postcss-cssnext');
-var stylelint = require('stylelint');
-
-var nodeModules = {};
+const path = require('path');
+const fs = require('fs');
+const webpack = require('webpack');
+const postcssAssets = require('postcss-assets');
+const postcssNext = require('postcss-cssnext');
+const nodeModules = {};
 fs.readdirSync('node_modules')
-  .filter(function (x) {
+  .filter((x) => {
     return ['.bin'].indexOf(x) === -1;
   })
-  .forEach(function (mod) {
+  .forEach((mod) => {
     nodeModules[mod] = 'commonjs ' + mod;
   });
 
-var config = {
+module.exports = {
   externals: nodeModules,
   target: 'node',
 
@@ -64,6 +62,14 @@ var config = {
           'isomorphic-style-loader',
           'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]'
         ]
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'isomorphic-style-loader',
+          'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]',
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -72,7 +78,7 @@ var config = {
       new webpack.LoaderOptionsPlugin({
         debug: false,
         options: {
-          postcss: function () {
+          postcss: () => {
             return [
               postcssNext(),
               postcssAssets({
@@ -111,5 +117,3 @@ const createIfDoesntExist = dest => {
 createIfDoesntExist('./build');
 createIfDoesntExist('./build/public');
 copySync('./src/favicon.ico', './build/public/favicon.ico', true);
-
-module.exports = config;

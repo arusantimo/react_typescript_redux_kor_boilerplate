@@ -1,20 +1,16 @@
-var fs = require('fs');
-var path = require('path');
-var webpack = require('webpack');
-var postcssAssets = require('postcss-assets');
-var postcssNext = require('postcss-cssnext');
-var stylelint = require('stylelint');
-var ManifestPlugin = require('webpack-manifest-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-var config = {
+const fs = require('fs');
+const path = require('path');
+const webpack = require('webpack');
+const postcssAssets = require('postcss-assets');
+const postcssNext = require('postcss-cssnext');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+module.exports = {
   bail: true,
-
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     modules: [path.resolve(__dirname), 'node_modules', 'app', 'app/redux'],
   },
-
   entry: {
     app: './src/client.tsx',
     vendor: [
@@ -30,13 +26,11 @@ var config = {
       'redux-thunk'
     ]
   },
-
   output: {
     path: path.resolve('./build/public'),
     publicPath: '/public/',
     filename: 'js/[name].[chunkhash].js'
   },
-
   module: {
     rules: [{
         enforce: 'pre',
@@ -77,6 +71,27 @@ var config = {
         })
       },
       {
+        test: /\.scss$/,
+        include: path.resolve('./src/app'),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'sass-loader',
+          loader: [
+            'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]',
+            'postcss-loader'
+          ]
+        })
+      },
+      {
+        test: /\.scss$/,
+        exclude: path.resolve('./src/app'),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'sass-loader',
+          loader: [
+            'css-loader',
+          ]
+        })
+      },
+      {
         test: /\.eot(\?.*)?$/,
         loader: 'file-loader?name=fonts/[hash].[ext]'
       },
@@ -98,7 +113,6 @@ var config = {
       }
     ]
   },
-
   plugins: [
     new webpack.LoaderOptionsPlugin({
       debug: true,
@@ -106,11 +120,8 @@ var config = {
         tslint: {
           failOnHint: true
         },
-        postcss: function () {
+        postcss: () => {
           return [
-            stylelint({
-              files: '../../src/app/*.css'
-            }),
             postcssNext(),
             postcssAssets({
               relative: true
@@ -142,7 +153,6 @@ var config = {
     })
   ]
 };
-
 const copySync = (src, dest, overwrite) => {
   if (overwrite && fs.existsSync(dest)) {
     fs.unlinkSync(dest);
@@ -150,7 +160,6 @@ const copySync = (src, dest, overwrite) => {
   const data = fs.readFileSync(src);
   fs.writeFileSync(dest, data);
 }
-
 const createIfDoesntExist = dest => {
   if (!fs.existsSync(dest)) {
     fs.mkdirSync(dest);
@@ -160,5 +169,3 @@ const createIfDoesntExist = dest => {
 createIfDoesntExist('./build');
 createIfDoesntExist('./build/public');
 copySync('./src/favicon.ico', './build/public/favicon.ico', true);
-
-module.exports = config;

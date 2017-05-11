@@ -1,6 +1,4 @@
 # Typescript-react-redux-ssr-boilerplate
-이 Repo는 vortigern기반으로 제작되어 있었습니다.<br>
-This Repo was based on vortigern.
 
 [![TypeScript](https://barbaruploads.s3.amazonaws.com/bicoz/typescript.png)](https://www.typescriptlang.org/)
 [![React](https://barbaruploads.s3.amazonaws.com/bicoz/react.png)](https://github.com/facebook/react)
@@ -25,13 +23,14 @@ This Repo was based on vortigern.
 - [classnames](https://github.com/JedWatson/classnames) classname의 사용 편의성을 높인다
 
 #### Build System
-- [Webpack](https://github.com/webpack/webpack) build를 위한 툴
+- [Webpack2](https://github.com/webpack/webpack) build를 위한 툴
   - [Awesome TypeScript Loader](https://github.com/s-panferov/awesome-typescript-loader) 타입스크립트 로더.
   - [Babel Loader](https://github.com/babel/babel-loader) 자바스크립트 바벨 로더.
   - [React Hot Loader](https://github.com/gaearon/react-hot-loader) 개발서버 핫 로딩을 위한 로더
   - [Isomorphic Style Loader](https://github.com/kriasoft/isomorphic-style-loader) 서버사이드 스타일 로더
   - [Style Loader](https://github.com/webpack/style-loader)
   - [CSS Loader](https://github.com/webpack/css-loader)
+  - [SCSS Loader](https://github.com/webpack-contrib/sass-loader)
   - [PostCSS Loader](https://github.com/postcss/postcss)
     - [PostCSS cssnext](https://github.com/MoOx/postcss-cssnext)
     - [PostCSS Assets](https://github.com/assetsjs/postcss-assets)
@@ -42,7 +41,6 @@ This Repo was based on vortigern.
   - [Manifest Plugin](https://github.com/danethurber/webpack-manifest-plugin)
   - [Extract Text Plugin](https://github.com/webpack/extract-text-webpack-plugin) css를 파일로 뽑아줌
   - [tslint Loader](https://github.com/wbuchwalter/tslint-loader) 빌드 프로세스에서 tslint를 미리 로더로 사용.
-  - [stylelint Loader](https://github.com/adrianhall/stylelint-loader) 빌드 프로세스에서 stylelint 미리 로더로 사용.
 
 #### Dev & Prod Server
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
@@ -120,3 +118,8 @@ $ npm run build:prod
 # 테스트(미완성)
 $ npm test
 ```
+
+## 추가할 기능
+- 테스트 (e2e, unit..)
+
+이 Repo는 vortigern기반으로 제작되어 있었습니다. (This Repo was based on <a href="https://github.com/barbar/vortigern" target="_blank">vortigern</a>.)

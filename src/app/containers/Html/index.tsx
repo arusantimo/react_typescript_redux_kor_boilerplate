@@ -16,7 +16,7 @@ class Html extends React.Component<IHtmlProps, {}> {
     }).filter((file) => file !== undefined);
   }
 
-  public render() {
+  public render(): JSX.Element {
     const head = Helmet.rewind();
     const { markup, store } = this.props;
 
@@ -41,12 +41,15 @@ class Html extends React.Component<IHtmlProps, {}> {
           {head.meta.toComponent()}
           {head.link.toComponent()}
           {head.script.toComponent()}
-
           {renderStyles}
           <link rel="shortcut icon" href="/favicon.ico" />
         </head>
         <body>
-          <main id="app" dangerouslySetInnerHTML={{ __html: markup }} />
+          <main
+            id="app"
+            dangerouslySetInnerHTML={{ __html: markup }}
+            style={{ visibility: 'hidden' }}
+          />
           {initialState}
           {renderScripts}
         </body>

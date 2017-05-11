@@ -40,8 +40,7 @@ export function starsReducer(state = initialState, action: IStarsAction) {
 export function getStars() {
   return (dispatch) => {
     dispatch(starsRequest());
-
-    return fetch('https://api.github.com/repos/barbar/vortigern')
+    return fetch('https://api.github.com/repos/arusantimo/react_typescript_redux_kor_boilerplate')
       .then((res) => {
         if (res.ok) {
           return res.json()

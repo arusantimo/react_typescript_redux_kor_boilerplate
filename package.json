@@ -1,6 +1,6 @@
 {
   "name": "typescript-react-redux-ssr-boilerplate",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "boilerplate for typescript + reactjs + redux + SSR",
   "main": "build/server.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "author": "Arusantimo <ziziana0507@gmail.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/arusantimo/react_typescript_redux_kor_boilerplate"
   },
   "keywords": [
     "react",
@@ -66,6 +66,7 @@
     "file-loader": "^0.9.0",
     "isomorphic-style-loader": "^1.1.0",
     "json-loader": "^0.5.4",
+    "node-sass": "^4.5.2",
     "phantomjs-prebuilt": "^2.1.14",
     "postcss-assets": "^4.1.0",
     "postcss-cssnext": "^2.9.0",
@@ -74,13 +75,13 @@
     "react-hot-loader": "^1.3.1",
     "redux-mock-store": "^1.2.1",
     "rimraf": "^2.5.4",
+    "sass-loader": "^6.0.4",
     "source-map-loader": "^0.1.6",
     "style-loader": "^0.13.1",
-    "stylelint": "^7.7.1",
     "tslint": "^4.3.1",
     "tslint-loader": "^3.3.0",
     "tslint-react": "^2.3.0",
-    "typescript": "^2.1.5",
+    "typescript": "2.3.0",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.0",
     "webpack-dev-middleware": "^1.9.0",
