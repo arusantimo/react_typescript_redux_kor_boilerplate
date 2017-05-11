@@ -30,6 +30,7 @@
   - [Isomorphic Style Loader](https://github.com/kriasoft/isomorphic-style-loader) 서버사이드 스타일 로더
   - [Style Loader](https://github.com/webpack/style-loader)
   - [CSS Loader](https://github.com/webpack/css-loader)
+  - [SCSS Loader](https://github.com/webpack-contrib/sass-loader)
   - [PostCSS Loader](https://github.com/postcss/postcss)
     - [PostCSS cssnext](https://github.com/MoOx/postcss-cssnext)
     - [PostCSS Assets](https://github.com/assetsjs/postcss-assets)
@@ -40,7 +41,6 @@
   - [Manifest Plugin](https://github.com/danethurber/webpack-manifest-plugin)
   - [Extract Text Plugin](https://github.com/webpack/extract-text-webpack-plugin) css를 파일로 뽑아줌
   - [tslint Loader](https://github.com/wbuchwalter/tslint-loader) 빌드 프로세스에서 tslint를 미리 로더로 사용.
-  - [stylelint Loader](https://github.com/adrianhall/stylelint-loader) 빌드 프로세스에서 stylelint 미리 로더로 사용.
 
 #### Dev & Prod Server
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
@@ -121,6 +121,5 @@ $ npm test
 
 ## 추가할 기능
 - 테스트 (e2e, unit..)
-- 스타일 구조 최적화
 
 이 Repo는 vortigern기반으로 제작되어 있었습니다. (This Repo was based on <a href="https://github.com/barbar/vortigern" target="_blank">vortigern</a>.)
