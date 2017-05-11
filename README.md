@@ -7,7 +7,7 @@
 
 ## 라이브러리 Libraries
 
-#### Core
+### Base Core
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://github.com/facebook/react)
 - [React Router](https://github.com/reactjs/react-router) v3
@@ -15,14 +15,14 @@
 - [React-Redux](https://github.com/reactjs/react-redux)
 - [React-Router-Redux](https://github.com/reactjs/react-router-redux)
 
-#### Utilities
+### Utilities
 - [Isomorphic Fetch](https://github.com/matthew-andrews/isomorphic-fetch) with [ES6-Promise](https://github.com/stefanpenner/es6-promise) 클라이언트 서버사이드 양쪽에서 fetch api를 사용하기 위한 툴
 - [Redux Thunk](https://github.com/gaearon/redux-thunk) 비동기 dispatch를 위한 툴
 - [Redux Connect](https://github.com/makeomatic/redux-connect) 리엑트라우터에서 비동기 작업을 하기 위한 툴
 - [React Helmet](https://github.com/nfl/react-helmet) html head meta정보를 삽입하는데 사용한다
 - [classnames](https://github.com/JedWatson/classnames) classname의 사용 편의성을 높인다
 
-#### Build System
+### Build System
 - [Webpack2](https://github.com/webpack/webpack) build를 위한 툴
   - [Awesome TypeScript Loader](https://github.com/s-panferov/awesome-typescript-loader) 타입스크립트 로더.
   - [Babel Loader](https://github.com/babel/babel-loader) 자바스크립트 바벨 로더.
