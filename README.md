@@ -95,6 +95,15 @@
 ```
 ## Usage
 
+### install
+
+타입스크립트 설치
+```
+$ npm install typescript -D
+```
+
+### script
+
 모든 명령어는 개발환경이 기본입니다. <br>
 `NODE_ENV`를`production`으로 설정하거나 아래의 단축키를 사용할 수 있습니다.
 

@@ -4,10 +4,10 @@ import { Link } from 'react-router';
 const style = require('./style.scss');
 
 interface IAppProps {
-  addStyle?: any;
+  addStyle?: {};
 };
 
-export class Header extends React.Component<IAppProps, any> {
+export class Header extends React.Component<IAppProps, void> {
   public render(): JSX.Element {
     return (
       <nav className={style.Nav}>

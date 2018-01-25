@@ -5,7 +5,7 @@ import { Header } from 'components';
 const appConfig = require('../../../../config/main');
 const style = require('./style.scss');
 
-export class App extends React.Component<any, any> {
+export class App extends React.Component<void, void> {
   public render(): JSX.Element {
     return (
       <section className={style.AppContainer}>

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const style = require('./style.scss');
 
-class Home extends React.Component<any, any> {
+class Home extends React.Component<void, void> {
   public render(): JSX.Element {
     return (
       <div className={style.Home}>
